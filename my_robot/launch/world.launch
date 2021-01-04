@@ -15,7 +15,7 @@
 
 
   <!-- World File -->
-  <arg name="world_file" default="$(find ball_chaser_worlds)/world/myworld.world"/>
+  <arg name="world_file" default="$(find ball_chaser_worlds)/world/myworld2.world"/>
 
   <!-- Launch Gazebo World -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
