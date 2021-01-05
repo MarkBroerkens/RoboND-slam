@@ -1,4 +1,4 @@
-me: ROS CI
+name: ROS CI
 
 on:
   push:
