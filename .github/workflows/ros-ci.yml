@@ -1,22 +1,15 @@
-name: ROS CI
+name: CI
 
-on:
-  push:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
-  build_docker:
+  industrial_ci:
+    strategy:
+      matrix:
+        env:
+          - {ROS_DISTRO: kinetic, ROS_REPO: main}
     runs-on: ubuntu-latest
-    container:
-       image: ubuntu:xenial    
-   
     steps:
       - uses: actions/checkout@v2
-      - uses: ros-tooling/setup-ros@v0.1
-        with:
-          required-ros-distributions: kinetic
-      - uses: ros-tooling/action-ros-ci@v0.1
-        with:
-          package-name: ball-chaser-bot
-          target-ros1-distro: kinetic
-          vcs-repo-file-url: ""
+      - uses: 'ros-industrial/industrial_ci@master'
+        env: ${{matrix.env}}
