@@ -24,7 +24,7 @@ Simulation of 4-wheeled robot with **skid steer drive** that chases white-colore
     │   │   ├── <yourworld>.world
     │   ├── CMakeLists.txt             # compiler instructions
     │   └── package.xml                # package info
-    ├── ball_chaser_worlds             # my_robot package
+    ├── ball_chaser_worlds             # package containing the world
     │   ├── model
     │   │   ├── home                   # model of my home ground floor
     │   │   │   ├── model.config
@@ -36,7 +36,7 @@ Simulation of 4-wheeled robot with **skid steer drive** that chases white-colore
     │   │   └── myworld.world          # my world that includes existing models
     │   ├── CMakeLists.txt             # compiler instructions
     │   └── package.xml                # package info
-    └─── ball_chaser                    # ball_chaser package                   
+    └─── ball_chaser                   # ball_chaser package                   
         ├── launch                     # launch folder for launch files   
         │   ├── ball_chaser.launch
         ├── src                        # source folder for C++ scripts
