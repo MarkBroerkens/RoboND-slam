@@ -2,15 +2,21 @@ name: ROS CI
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master ]
 
 jobs:
   build_docker:
-    runs-on: ubuntu-xenial
+    runs-on: ubuntu-latest
     container:
-      image: ubuntu:xenial
+       image: ubuntu:xenial    
+   
     steps:
-      - uses: ros-tooling/setup-ros@0.0.25
+      - uses: actions/checkout@v2
+      - uses: ros-tooling/setup-ros@v0.1
         with:
           required-ros-distributions: kinetic
-      - run: "source /opt/ros/kinetic/setup.bash && rosnode --help"
+      - uses: ros-tooling/action-ros-ci@v0.1
+        with:
+          package-name: ball_chaser
+          target-ros1-distro: kinetic
+          vcs-repo-file-url: ""
