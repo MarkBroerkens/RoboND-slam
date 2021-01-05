@@ -18,7 +18,19 @@ Simulation of robot that chases white-colored balls
     │   ├── world                      # world folder for world files
     │   │   ├── <yourworld>.world
     │   ├── CMakeLists.txt             # compiler instructions
-    │   ├── package.xml                # package info
+    │   └── package.xml                # package info
+    ├── ball_chaser_worlds             # my_robot package
+    │   ├── model
+    │   │   ├── home                   # model of my home ground floor
+    │   │   │   ├── model.config
+    │   │   │   └── model.sdf
+    │   │   ├── my_ball                # model of the white ball
+    │   │   │   ├── model.config
+    │   │   │   └── model.sdf
+    │   ├── world
+    │   │   └── myworld.world          # my world that includes existing models
+    │   ├── CMakeLists.txt             # compiler instructions
+    │   └── package.xml                # package info
     ├── ball_chaser                    # ball_chaser package                   
     │   ├── launch                     # launch folder for launch files   
     │   │   ├── ball_chaser.launch
@@ -70,6 +82,7 @@ $ source devel/setup.bash
 in terminal 1:
 
 ```sh
+$ source $HOME/catkin_ws/devel/setup.bash
 $ roslaunch my_robot world.launch
 
 ```
@@ -77,18 +90,18 @@ $ roslaunch my_robot world.launch
 in terminal 2:
 
 ```sh
-$ cd /home/workspace/catkin_ws/
-$ source devel/setup.bash
-$ rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
-  x: 0.1
-  y: 0.0
-  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0
-  z: 0.1" 
+$ source $HOME/catkin_ws/devel/setup.bash
+$ roslaunch ball_chaser ball_chaser.launch
 
 ```
 
+in Gazebo:
+
+move the white ball in front of the robot and have fun.
+
+# Demo
 
 
+
+# License
+MIT license
