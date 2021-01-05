@@ -1,10 +1,12 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics) 
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-ball-chaser-bot/workflows/ROS%20CI/badge.svg)
 
-# RoboND-ball-chaser-bot
+# Ball Chaser Bot
 Simulation of 4-wheeled robot with **skid steer drive** that chases white-colored balls.
 
+![Ball Chaser Bot](https://github.com/MarkBroerkens/RoboND-ball-chaser-bot/blob/main/my_robot/images/mybot.png)
 
+[![Ball Chaser Bot Video](https://img.youtube.com/vi/M01QKbkt1Wo/0.jpg)](https://www.youtube.com/watch?v=M01QKbkt1Wo)
 
 ### Directory Structure
 ```
@@ -82,7 +84,7 @@ $ source devel/setup.bash
 
 
 #### Step 5 Run the Simulation 
-in terminal 1:
+##### in terminal 1:
 
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
@@ -90,7 +92,7 @@ $ roslaunch my_robot world.launch
 
 ```
 
-in terminal 2:
+##### in terminal 2:
 
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
@@ -98,12 +100,9 @@ $ roslaunch ball_chaser ball_chaser.launch
 
 ```
 
-in Gazebo:
+##### in Gazebo:
 
 move the white ball in front of the robot and have fun.
-
-# Demo
-
 
 
 # License
