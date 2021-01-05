@@ -41,7 +41,7 @@
   <xacro:property name="M_PI_2" value="1.570796327" />
   <xacro:property name="DEG_TO_RAD" value="0.017453293" />
 
- <xacro:macro name="wheel" params="fb lr parent translateX translateY flipY"> <!--fb : front, back ; lr: left, right -->
+ <xacro:macro name="wheel" params="fb lr parent translateX translateY"> <!--fb : front, back ; lr: left, right -->
     <link name="${fb}_${lr}_wheel">
       <visual>
         <origin xyz="0 0 0" rpy="0 1.5707 1.5707" /> 
@@ -206,7 +206,7 @@
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
   <joint type="fixed" name="hokuyo_joint">
-    <origin xyz="0 0 .07" rpy="0 0 0"/>
+    <origin xyz="0 0 .02" rpy="0 0 0"/>
     <child link="hokuyo"/>
     <parent link="compute"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -220,11 +220,11 @@
 
 
 
-  <xacro:wheel fb="front" lr="right" parent="chassis" translateX="${wheel_separation/2}" translateY="-${wheel_y_offset}" flipY="1"/>
-  <xacro:wheel fb="front" lr="left" parent="chassis" translateX="${wheel_separation/2}" translateY="${wheel_y_offset}" flipY="1"/>
+  <xacro:wheel fb="front" lr="right" parent="chassis" translateX="${wheel_separation/2}" translateY="-${wheel_y_offset}"/>
+  <xacro:wheel fb="front" lr="left" parent="chassis" translateX="${wheel_separation/2}" translateY="${wheel_y_offset}"/>
 
-  <xacro:wheel fb="back" lr="right" parent="chassis" translateX="-${wheel_separation/2}" translateY="-${wheel_y_offset}" flipY="1"/>
-  <xacro:wheel fb="back" lr="left" parent="chassis" translateX="-${wheel_separation/2}" translateY="${wheel_y_offset}" flipY="1"/>
+  <xacro:wheel fb="back" lr="right" parent="chassis" translateX="-${wheel_separation/2}" translateY="-${wheel_y_offset}"/>
+  <xacro:wheel fb="back" lr="left" parent="chassis" translateX="-${wheel_separation/2}" translateY="${wheel_y_offset}"/>
 
 
   
