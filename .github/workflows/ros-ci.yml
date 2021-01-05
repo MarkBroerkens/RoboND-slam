@@ -17,6 +17,5 @@ jobs:
           required-ros-distributions: kinetic
       - uses: ros-tooling/action-ros-ci@v0.1
         with:
-          package-name: ball-chaser
           target-ros1-distro: kinetic
           vcs-repo-file-url: ""
