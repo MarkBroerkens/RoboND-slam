@@ -1,11 +1,13 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # RoboND-ball-chaser-bot
-Simulation of robot that chases white-colored balls
+Simulation of 4-wheeled robot with **skid steer drive** that chases white-colored balls.
+
+
 
 ### Directory Structure
 ```
-.Project2                              # Go Chase It Project
+.                                      # Go Chase It Project
     ├── my_robot                       # my_robot package                   
     │   ├── launch                     # launch folder for launch files   
     │   │   ├── robot_description.launch
@@ -31,17 +33,17 @@ Simulation of robot that chases white-colored balls
     │   │   └── myworld.world          # my world that includes existing models
     │   ├── CMakeLists.txt             # compiler instructions
     │   └── package.xml                # package info
-    ├── ball_chaser                    # ball_chaser package                   
-    │   ├── launch                     # launch folder for launch files   
-    │   │   ├── ball_chaser.launch
-    │   ├── src                        # source folder for C++ scripts
-    │   │   ├── drive_bot.cpp
-    │   │   ├── process_images.cpp
-    │   ├── srv                        # service folder for ROS services
-    │   │   ├── DriveToTarget.srv
-    │   ├── CMakeLists.txt             # compiler instructions
-    │   ├── package.xml                # package info                  
-    └──                                                 
+    └─── ball_chaser                    # ball_chaser package                   
+        ├── launch                     # launch folder for launch files   
+        │   ├── ball_chaser.launch
+        ├── src                        # source folder for C++ scripts
+        │   ├── drive_bot.cpp
+        │   ├── process_images.cpp
+        ├── srv                        # service folder for ROS services
+        │   ├── DriveToTarget.srv
+        ├── CMakeLists.txt             # compiler instructions
+        └── package.xml                # package info                  
+                                                     
 
 ```
 
