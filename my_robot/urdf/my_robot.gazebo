@@ -9,17 +9,17 @@
     <rightFrontJoint>front_right_wheel_joint</rightFrontJoint>
     <leftRearJoint>back_left_wheel_joint</leftRearJoint>
     <rightRearJoint>back_right_wheel_joint</rightRearJoint>
-    <wheelSeparation>0.12</wheelSeparation>
-    <wheelDiameter>0.02</wheelDiameter>
+    <wheelSeparation>0.32</wheelSeparation>
+    <wheelDiameter>0.1</wheelDiameter>
     <robotBaseFrame>robot_footprint</robotBaseFrame>
-    <torque>200</torque>
+    <torque>20</torque>
     <MaxForce>5.0</MaxForce>
     <commandTopic>cmd_vel</commandTopic>
     <odometryTopic>odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
     <broadcastTF>true</broadcastTF>
-    <covariance_x>0.001</covariance_x>
-    <covariance_y>0.001</covariance_y> 
+    <covariance_x>0.0001</covariance_x>
+    <covariance_y>0.0001</covariance_y> 
     <covariance_yaw>0.01</covariance_yaw> 
   </plugin>
   </gazebo>

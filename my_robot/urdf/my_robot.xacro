@@ -5,26 +5,26 @@
   <!-- Scale the robot size to fit the environment -->
   <xacro:property name="scale" value="1.0" />
 
-  <xacro:property name="chassis_width" value="${scale * 0.115}" />
-  <xacro:property name="chassis_length" value="${scale * 0.145}" />
+  <xacro:property name="chassis_width" value="${scale * 0.2}" />
+  <xacro:property name="chassis_length" value="${scale * 0.45}" />
   <xacro:property name="chassis_height" value="${scale * 0.02}" />
-  <xacro:property name="chassis_mass" value="${scale * 0.1}" />
+  <xacro:property name="chassis_mass" value="${scale * 0.2}" />
   
   <xacro:property name="compute_width" value="${scale * 0.10}" />
   <xacro:property name="compute_length" value="${scale * 0.12}" />
   <xacro:property name="compute_height" value="${scale * 0.05}" />
-  <xacro:property name="compute_mass" value="${scale * 0.2}" />
+  <xacro:property name="compute_mass" value="${scale * 0.1}" />
 
   <xacro:property name="camera_width" value="${scale * 0.02}" />
   <xacro:property name="camera_length" value="${scale * 0.02}" />
   <xacro:property name="camera_height" value="${scale * 0.02}" />
   <xacro:property name="camera_mass" value="${scale * 0.02}" />
   
-  <xacro:property name="wheel_length" value="${scale * 0.03}" />
-  <xacro:property name="wheel_radius" value="${scale * 0.02}" />
-  <xacro:property name="wheel_mass" value="${scale * 1}" />
+  <xacro:property name="wheel_length" value="${scale * 0.045}" />
+  <xacro:property name="wheel_radius" value="${scale * 0.05}" />
+  <xacro:property name="wheel_mass" value="${scale * .01}" />
   <xacro:property name="wheel_inertia" value="${scale * 1e-3}" />
-  <xacro:property name="wheel_separation" value="${scale * 0.12}" />
+  <xacro:property name="wheel_separation" value="${scale * 0.32}" />
   <xacro:property name="wheel_y_offset" value="${(chassis_width + wheel_length + 0.005)/2}" />
 
 
@@ -200,9 +200,9 @@
  
 
   <joint type="fixed" name="camera_joint">
-    <origin xyz="${camera_length/2 + compute_length/2} 0 0" rpy="0 0 0"/>
+    <origin xyz="${chassis_length/2 - camera_length} 0 ${chassis_height/2 + camera_height/2}" rpy="0 0 0"/>
     <child link="camera"/>
-    <parent link="compute"/>
+    <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
   <joint type="fixed" name="hokuyo_joint">

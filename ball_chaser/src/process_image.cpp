@@ -28,8 +28,18 @@ void process_image_callback(const sensor_msgs::Image img)
     // uint32 step           # Full row length in bytes
     // uint8[] data          # actual matrix data, size is (step * rows)
 
-    int white_pixel = 255;
+    // calibration
+    const int white_pixel = 255;
+    const float max_white_pixels_ratio = 0.1;
+    const float soft_max_white_pixels_ratio = 0.05;
+
+
+
+    // number of total pixels
+    const int total_pixels = img.height * img.width;
+
     int step_index = -1;
+    int white_pixels = 0;
 
     // Loop through each pixel in the image and check if its white
     for (int i = 0; i < img.height * img.step; i=i+3) {
@@ -37,31 +47,41 @@ void process_image_callback(const sensor_msgs::Image img)
             img.data[i+1] >= white_pixel &&
             img.data[i+2] >= white_pixel) {
             step_index = i % img.step;
-            break;
-            
+            white_pixels++;
         }
     }
 
-    if (step_index < 0) { // ball not in frame
-    	drive_robot(0.0, 0.1);
-    }
-    else
+    const float white_pixels_ratio = (float)white_pixels / (float)total_pixels;
+
+    if (white_pixels_ratio > max_white_pixels_ratio) {
+        ROS_INFO("too close. Moving Backwards");
+        drive_robot(-0.2, 0.0);
+    } else if (white_pixels_ratio > soft_max_white_pixels_ratio) {
+        // stop. 
+        ROS_INFO("ball in front of tobot. stopping");
+        drive_robot(0.0, 0.0);
+    } else if (step_index < 0) { // ball not in frame
+        // search ball by turning left
+    	ROS_INFO("searching ball. Slowly turning left");
+        drive_robot(0.0, 0.3);
+    } 
+    else 
     {
       // Determining region: left, center, or right
       if (step_index < int(img.step/3))
       {
         drive_robot(0.0, 0.5);   // turn left bc white_pixel in left region
-        ROS_INFO("Ball in LEFT Region. Turning left");
+        ROS_INFO("Ball in LEFT. Turning left");
       }
       else if (step_index <= 2*int(img.step/3))
       {
       	drive_robot(0.5, 0.0);   // go forward
-        ROS_INFO("Ball in CENTER. MOVING FORWARD");
+        ROS_INFO("Ball in CENTER. Moving forward");
       }
       else 
       {
         drive_robot(0.0, -0.5);   // turn right bc white_pixel in right region
-        ROS_INFO("Ball in RIGHT Reguib, Turning right");
+        ROS_INFO("Ball in RIGHT, Turning right");
       }
         
     }

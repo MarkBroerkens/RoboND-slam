@@ -6,7 +6,7 @@ Simulation of 4-wheeled robot with **skid steer drive** that chases white-colore
 
 ![Ball Chaser Bot](https://github.com/MarkBroerkens/RoboND-ball-chaser-bot/blob/main/my_robot/images/mybot.png)
 
-[![Ball Chaser Bot Video](https://img.youtube.com/vi/M01QKbkt1Wo/0.jpg)](https://www.youtube.com/watch?v=M01QKbkt1Wo)
+[![Ball Chaser Bot Video](https://img.youtube.com/vi/38jgGmgunW0/0.jpg)](https://www.youtube.com/watch?v=38jgGmgunW0)
 
 ### Directory Structure
 ```
