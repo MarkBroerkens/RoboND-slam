@@ -8,7 +8,7 @@
   <xacro:property name="chassis_width" value="${scale * 0.2}" />
   <xacro:property name="chassis_length" value="${scale * 0.45}" />
   <xacro:property name="chassis_height" value="${scale * 0.02}" />
-  <xacro:property name="chassis_mass" value="${scale * 0.2}" />
+  <xacro:property name="chassis_mass" value="${scale * 0.5}" />
   
   <xacro:property name="compute_width" value="${scale * 0.10}" />
   <xacro:property name="compute_length" value="${scale * 0.12}" />
@@ -22,7 +22,7 @@
   
   <xacro:property name="wheel_length" value="${scale * 0.045}" />
   <xacro:property name="wheel_radius" value="${scale * 0.05}" />
-  <xacro:property name="wheel_mass" value="${scale * .01}" />
+  <xacro:property name="wheel_mass" value="${scale * .05}" />
   <xacro:property name="wheel_inertia" value="${scale * 1e-3}" />
   <xacro:property name="wheel_separation" value="${scale * 0.32}" />
   <xacro:property name="wheel_y_offset" value="${(chassis_width + wheel_length + 0.005)/2}" />
