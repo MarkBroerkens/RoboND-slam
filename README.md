@@ -21,10 +21,10 @@ Simulation of 4-wheeled robot with **skid steer drive** that chases white-colore
     │   │   ├── my_robot.gazebo
     │   │   ├── my_robot.xacro
     │   ├── world                      # world folder for world files
-    │   │   ├── <yourworld>.world
+    │   │   ├── myworld.world          
     │   ├── CMakeLists.txt             # compiler instructions
     │   └── package.xml                # package info
-    ├── ball_chaser_worlds             # package containing the world
+    ├── ball_chaser_worlds             # reusable models and worlds 
     │   ├── model
     │   │   ├── home                   # model of my home ground floor
     │   │   │   ├── model.config
