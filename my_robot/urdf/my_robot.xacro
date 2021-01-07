@@ -5,7 +5,7 @@
   <!-- Scale the robot size to fit the environment -->
   <xacro:property name="scale" value="1.0" />
 
-  <xacro:property name="chassis_width" value="${scale * 0.2}" />
+  <xacro:property name="chassis_width" value="${scale * 0.45}" />
   <xacro:property name="chassis_length" value="${scale * 0.45}" />
   <xacro:property name="chassis_height" value="${scale * 0.02}" />
   <xacro:property name="chassis_mass" value="${scale * 0.1}" />
@@ -20,7 +20,7 @@
   <xacro:property name="camera_height" value="${scale * 0.02}" />
   <xacro:property name="camera_mass" value="${scale * 0.02}" />
   
-  <xacro:property name="wheel_length" value="${scale * 0.045}" />
+  <xacro:property name="wheel_length" value="${scale * 0.02}" />
   <xacro:property name="wheel_radius" value="${scale * 0.05}" />
   <xacro:property name="wheel_mass" value="${scale * .05}" />
   <xacro:property name="wheel_inertia" value="${scale * 1e-3}" />
@@ -214,7 +214,7 @@
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
   <joint type="fixed" name="compute_joint">
-    <origin xyz="0 0 ${chassis_height/2 + compute_height/2}" rpy="0 0 0"/>
+    <origin xyz="-${compute_height/2} 0 ${chassis_height/2 + compute_height/2}" rpy="0 0 0"/>
     <child link="compute"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
