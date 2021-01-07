@@ -1,10 +1,10 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics) 
-![ROS CI](https://github.com/MarkBroerkens/RoboND-ball-chaser-bot/workflows/ROS%20CI/badge.svg)
+![ROS CI](https://github.com/MarkBroerkens/RoboND-localization/workflows/ROS%20CI/badge.svg)
 
 # Ball Chaser Bot
 Simulation of 4-wheeled robot with **skid steer drive** that chases white-colored balls.
 
-![Ball Chaser Bot](https://github.com/MarkBroerkens/RoboND-ball-chaser-bot/blob/main/my_robot/images/mybot.png)
+![Ball Chaser Bot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
 
 [![Ball Chaser Bot Video](https://img.youtube.com/vi/38jgGmgunW0/0.jpg)](https://www.youtube.com/watch?v=38jgGmgunW0)
 
