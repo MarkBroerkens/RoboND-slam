@@ -24,17 +24,21 @@
   <xacro:property name="wheel_radius" value="${scale * 0.05}" />
   <xacro:property name="wheel_mass" value="${scale * .05}" />
   <xacro:property name="wheel_inertia" value="${scale * 1e-3}" />
-  <xacro:property name="wheel_separation" value="${scale * 0.32}" />
-  <xacro:property name="wheel_y_offset" value="${(chassis_width + wheel_length + 0.005)/2}" />
+  <xacro:property name="wheel_separation" value="${chassis_width + wheel_length + 2*0.005*scale}" />
+  <xacro:property name="wheel_base" value="${scale * 0.32}" />
+  <xacro:property name="wheel_y_offset" value="${wheel_separation/2}" />
 
 
   <xacro:property name="wheel_kp" value="1000000.0" />
   <xacro:property name="wheel_kd" value="10.0" />
+  <xacro:property name="wheel_fdir1" value="1 0 0" />
   <xacro:property name="wheel_mu1" value="1" />
   <xacro:property name="wheel_mu2" value="1" />
   <xacro:property name="wheel_slip1" value="0.5" />
   <xacro:property name="wheel_slip2" value="0" />
-
+  <xacro:property name="wheel_maxVel" value="0" />
+  <xacro:property name="wheel_minDepth" value="0.001" />
+ 
 
  <!--All units in m-kg-s-radians unit system -->
   <xacro:property name="M_PI" value="3.1415926535897931" />
@@ -57,15 +61,15 @@
         </geometry>
         <surface>
           <friction>
-            <fdir1>1 0 0</fdir1>
+            <fdir1>${wheel_fdir1}</fdir1>
             <kp>${wheel_kp}</kp> <!-- kp and kd for rubber -->
             <kd>${wheel_kd}</kd>
             <mu>${wheel_mu1}</mu>
             <mu2>${wheel_mu2}</mu2>
             <slip1>${wheel_slip1}</slip1>
             <slip2>${wheel_slip2}</slip2>
-            <maxVel>0.001</maxVel>
-            <minDepth>0</minDepth>
+            <!--<maxVel>${wheel_maxVel}</maxVel>
+            <minDepth>${wheel_minDepth}</minDepth>-->
           </friction>
         </surface>
       </collision>
@@ -222,11 +226,11 @@
 
 
 
-  <xacro:wheel fb="front" lr="right" parent="chassis" translateX="${wheel_separation/2}" translateY="-${wheel_y_offset}"/>
-  <xacro:wheel fb="front" lr="left" parent="chassis" translateX="${wheel_separation/2}" translateY="${wheel_y_offset}"/>
+  <xacro:wheel fb="front" lr="right" parent="chassis" translateX="${wheel_base/2}" translateY="-${wheel_y_offset}"/>
+  <xacro:wheel fb="front" lr="left" parent="chassis" translateX="${wheel_base/2}" translateY="${wheel_y_offset}"/>
 
-  <xacro:wheel fb="back" lr="right" parent="chassis" translateX="-${wheel_separation/2}" translateY="-${wheel_y_offset}"/>
-  <xacro:wheel fb="back" lr="left" parent="chassis" translateX="-${wheel_separation/2}" translateY="${wheel_y_offset}"/>
+  <xacro:wheel fb="back" lr="right" parent="chassis" translateX="-${wheel_base/2}" translateY="-${wheel_y_offset}"/>
+  <xacro:wheel fb="back" lr="left" parent="chassis" translateX="-${wheel_base/2}" translateY="${wheel_y_offset}"/>
 
 
   
