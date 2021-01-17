@@ -1,40 +1,46 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics) 
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-localization/workflows/ROS%20CI/badge.svg)
 
-# Ball Chaser Bot
-Simulation of 4-wheeled robot with **skid steer drive** that chases white-colored balls.
+# Robot Localization
+Simulation of 4-wheeled robot with **skid steer drive** that localizes itself using Adaptive Montecarlo Localization (AMCL).
 
-![Ball Chaser Bot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
+![Skid Steer Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
 
-[![Ball Chaser Bot Video](https://img.youtube.com/vi/38jgGmgunW0/0.jpg)](https://www.youtube.com/watch?v=38jgGmgunW0)
 
 ### Directory Structure
 ```
-.                                      # Go Chase It Project
-    ├── my_robot                       # my_robot package                   
-    │   ├── launch                     # launch folder for launch files   
-    │   │   ├── robot_description.launch
-    │   │   ├── world.launch
-    │   ├── meshes                     # meshes folder for sensors
-    │   │   ├── hokuyo.dae
-    │   ├── urdf                       # urdf folder for xarco files
-    │   │   ├── my_robot.gazebo
-    │   │   ├── my_robot.xacro
-    │   ├── world                      # world folder for world files
-    │   │   ├── myworld.world          
-    │   ├── CMakeLists.txt             # compiler instructions
-    │   └── package.xml                # package info
-    └─── ball_chaser                   # ball_chaser package                   
-        ├── launch                     # launch folder for launch files   
-        │   ├── ball_chaser.launch
-        ├── src                        # source folder for C++ scripts
-        │   ├── drive_bot.cpp
-        │   ├── process_images.cpp
-        ├── srv                        # service folder for ROS services
-        │   ├── DriveToTarget.srv
-        ├── CMakeLists.txt             # compiler instructions
-        └── package.xml                # package info                  
-                                                     
+.
+├── LICENSE
+├── my_robot
+│   ├── CMakeLists.txt
+│   ├── config                         # config files for navigation
+│   │   ├── base_local_planner_params.yaml
+│   │   ├── costmap_common_params.yaml
+│   │   ├── global_costmap_params.yaml
+│   │   └── local_costmap_params.yaml
+│   ├── images                         # images for documentation
+│   │   └── mybot.png
+│   ├── launch                         # launch files
+│   │   ├── amcl.launch         
+│   │   ├── main.launch                # main launch files to start all other launch files needed in this project
+│   │   ├── robot_description.launch
+│   │   └── world.launch
+│   ├── maps                           # map, generated from myworld.world
+│   │   ├── myworld.pgm                
+│   │   └── myworld.yaml
+│   ├── meshes                         
+│   │   └── hokuyo.dae                 # mesh of lidar sensor
+│   ├── package.xml                    # package info
+│   ├── rviz                           # rviz configuration
+│   │   └── amcl.rviz
+│   ├── urdf                           # robot description files
+│   │   ├── my_robot.gazebo
+│   │   └── my_robot.xacro
+│   └── world                          # world folder for world files
+│       └── myworld.world
+└── README.md                          # this README.md file
+
+                                                                  
 
 ```
 
@@ -52,16 +58,16 @@ $ sudo apt-get upgrade -y
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
-$ git clone https://github.com/MarkBroerkens/RoboND-ball-chaser-bot ball-chaser-bot
+$ git clone https://github.com/MarkBroerkens/RoboND-localization skid-steer-robot
 ```
 
-#### Step 3 add Model Library and custom models
+
+### step 3 Install teleoperation node
 ```sh
-$ cd $HOME
-$ git clone https://github.com/osrf/gazebo_models
-$ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$HOME/gazebo_models:$HOME/catkin_ws/src/ball-chaser-bot/ball_chaser_worlds/model
-
+$ cd $HOME/catkin_ws
+git clone https://github.com/ros-teleop/teleop_twist_keyboard
 ```
+
 
 #### Step 4 Compile the code
 ```sh
@@ -76,21 +82,14 @@ $ source devel/setup.bash
 
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch my_robot world.launch
+$ roslaunch my_robot main.launch
 
 ```
 
-##### in terminal 2:
 
-```sh
-$ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch ball_chaser ball_chaser.launch
+##### in Rviz:
 
-```
-
-##### in Gazebo:
-
-move the white ball in front of the robot and have fun.
+define a 2D navigation target.
 
 
 # License
