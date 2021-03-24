@@ -62,10 +62,10 @@ $ git clone https://github.com/MarkBroerkens/RoboND-localization skid-steer-robo
 ```
 
 
-### step 3 Install teleoperation node
+#### step 3 Install dependencies
 ```sh
 $ cd $HOME/catkin_ws
-git clone https://github.com/ros-teleop/teleop_twist_keyboard
+$ rosdep install --from-paths ./src
 ```
 
 
