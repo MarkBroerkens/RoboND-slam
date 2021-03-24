@@ -62,10 +62,10 @@ $ git clone https://github.com/MarkBroerkens/RoboND-localization skid-steer-robo
 ```
 
 
-#### step 3 Install dependencies
+#### step 3 Install dependencies of packages in workspace
 ```sh
 $ cd $HOME/catkin_ws
-$ rosdep install --from-paths ./src
+$ rosdep install --from-paths src --ignore-src -r -y
 ```
 
 
