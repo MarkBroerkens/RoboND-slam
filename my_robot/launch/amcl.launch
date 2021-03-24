@@ -78,7 +78,7 @@
 <!-- Laser model parameters -->
 
     <!-- laser_min_range (double, default: -1.0) -->
-    <!-- <param name="" value=""/> -->
+    <param name="laser_min_range" value="0.1"/> -->
 
     <!-- laser_max_range (double, default: -1.0) -->
     <param name="laser_max_range" value="15"/>
@@ -86,8 +86,8 @@
     <!-- laser_max_beams (int, default: 30) -->
     <param name="laser_max_beams" value="9"/>
  
-    <!-- laser_z_hit (double, default: 0.95) -->
-    <!-- <param name="" value=""/> -->
+    <!-- laser_z_hit (double, default: 0.99) -->
+    <param name="laser_z_hit" value=""/>
 
     <!-- laser_z_short (double, default: 0.1) -->
     <!-- <param name="" value=""/> -->
@@ -96,7 +96,7 @@
     <!-- <param name="" value=""/> -->
     
     <!-- laser_z_rand (double, default: 0.05) -->
-    <!-- <param name="" value=""/> -->
+    <param name="laser_z_rand" value="0.01"/>
 
     <!-- laser_sigma_hit (double, default: 0.2 meters) -->
     <!-- <param name="" value=""/> -->
@@ -105,7 +105,7 @@
     <!-- <param name="" value=""/> -->
    
     <!-- laser_likelihood_max_dist (double, default: 2.0 meters) -->
-    <!-- <param name="" value=""/> -->
+    <param name="laser_likelihood_max_dist" value="4.0"/>
     
     <!-- laser_model_type (string, default: "likelihood_field") -->
     <param name="laser_model_type" value="likelihood_field"/> 
