@@ -6,6 +6,8 @@ Simulation of 4-wheeled robot with **skid steer drive** that localizes itself us
 
 ![Skid Steer Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
 
+![Localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz.png)
+
 
 ### Directory Structure
 ```
@@ -84,19 +86,20 @@ $ source devel/setup.bash
 
 
 #### Step 5 Run the Simulation 
-##### in terminal 1:
-
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
 $ roslaunch my_robot main.launch
 
 ```
+This will open Rviz and Gazebo. 
 
-
-##### in Rviz:
-
-define a 2D navigation target.
-
+You have two options to control the robot:
+* If the focus is on the terminal window you can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-localization/blob/main/teleop_twist_keyboard/README.md)
+* Alternatively you can set a 2D navigation target in Rviz
 
 # License
 MIT license
+
+# Thanks to
+* The teleop_twist_keyboard code is copied from [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
+* Inspiration for tuning of AMCL parameters is taken from [Kaiyu Zheng, ROS Navigation Tuning Guide](http://kaiyuzheng.me/documents/navguide.pdf)
