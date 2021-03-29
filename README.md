@@ -8,7 +8,7 @@ You have two options to control the robot:
 * If the focus is on the terminal window you can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-localization/blob/main/teleop_twist_keyboard/README.md)
 * Alternatively you can set a 2D navigation target in Rviz and robot calculates the path to the target autonomously.
 
-AMCL provides many parameters allows tailoring the algorithm for the given scenario. Please see [amcl.launch](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/launch/amcl.launch) for details.
+AMCL provides many parameters which allow for optimizing the algorithm for the given scenario. Please see [amcl.launch](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/launch/amcl.launch) for details.
 
 ![Skid Steer Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
 

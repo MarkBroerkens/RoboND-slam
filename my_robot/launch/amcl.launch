@@ -153,6 +153,9 @@
     <rosparam file="$(find my_robot)/config/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find my_robot)/config/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load" />
+
+    <param name="yaw_goal_tolerance" value="0.1"/>
+    <param name="xy_goal_tolerance" value="0.2"/>  
   </node>
 
 </launch>
