@@ -10,9 +10,11 @@ You have two options to control the robot:
 
 AMCL provides many parameters which allow for optimizing the algorithm for the given scenario. Please see [amcl.launch](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/launch/amcl.launch) for details.
 
-![Skid Steer Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
+![Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
 
 ![Localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz.png)
+
+![Localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz2.png)
 
 
 ### Directory Structure
