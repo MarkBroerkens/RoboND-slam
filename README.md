@@ -2,7 +2,7 @@
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-localization/workflows/ROS%20CI/badge.svg)
 
 # Robot Localization
-Simulation of 4-wheeled robot with **skid steer drive** that localizes itself using Adaptive Montecarlo Localization (AMCL).
+Simulation of 2-wheeled robot with *differential drive** that localizes itself using Adaptive Montecarlo Localization (AMCL).
 
 You have two options to control the robot:
 * If the focus is on the terminal window you can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-localization/blob/main/teleop_twist_keyboard/README.md)
@@ -72,7 +72,7 @@ $ sudo apt-get upgrade -y
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
-$ git clone https://github.com/MarkBroerkens/RoboND-localization skid-steer-robot
+$ git clone https://github.com/MarkBroerkens/RoboND-localization robot-localization
 ```
 
 
