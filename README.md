@@ -31,8 +31,8 @@ AMCL provides many parameters which allow for optimizing the algorithm for the g
 │   ├── images                         # images for documentation
 │   │   └── mybot.png
 │   ├── launch                         # launch files
-│   │   ├── amcl.launch         
-│   │   ├── main.launch                # main launch files to start all other launch files needed in this project
+│   │   ├── maping.launch    
+│   │   ├── teleop.launch     
 │   │   ├── robot_description.launch
 │   │   └── world.launch
 │   ├── maps                           # map, generated from myworld.world
@@ -74,7 +74,7 @@ $ sudo apt-get upgrade -y
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
-$ git clone https://github.com/MarkBroerkens/RoboND-localization robot-localization
+$ git clone https://github.com/MarkBroerkens/RoboND-slam
 ```
 
 
@@ -94,13 +94,29 @@ $ source devel/setup.bash
 
 
 #### Step 5 Run the Simulation 
+##### in Terminal 1
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch my_robot main.launch
+$ roslaunch my_robot world.launch
 
 ```
 This will open Rviz and Gazebo. 
 
+##### in Terminal 2
+```sh
+$ source $HOME/catkin_ws/devel/setup.bash
+$ roslaunch my_robot teleop.launch
+
+```
+This will run the teleoperation mode.
+
+##### in Terminal 3
+
+```sh
+$ source $HOME/catkin_ws/devel/setup.bash
+$ roslaunch my_robot maping.launch
+```
+This will run the RTAB mapping.
 
 
 # License
@@ -108,4 +124,3 @@ MIT license
 
 # Thanks to
 * The teleop_twist_keyboard code is copied from [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
-* Inspiration for tuning of AMCL parameters is taken from [Kaiyu Zheng, ROS Navigation Tuning Guide](http://kaiyuzheng.me/documents/navguide.pdf)
