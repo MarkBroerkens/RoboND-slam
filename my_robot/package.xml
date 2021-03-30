@@ -46,6 +46,8 @@
   <depend>move_base</depend>
   <depend>gazebo_ros</depend>
   <depend>rviz</depend>
+  <depend>rtabmap</depend>
+  <depend>rtabmap_ros</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
