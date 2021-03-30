@@ -1,5 +1,5 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics) 
-![ROS CI](https://github.com/MarkBroerkens/RoboND-localization/workflows/ROS%20CI/badge.svg)
+![ROS CI](https://github.com/MarkBroerkens/RoboND-slam/workflows/ROS%20CI/badge.svg)
 
 # Robot Localization
 Simulation of 2-wheeled robot with *differential drive** that localizes itself using Adaptive Montecarlo Localization (AMCL).
