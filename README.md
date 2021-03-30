@@ -12,7 +12,9 @@ AMCL provides many parameters which allow for optimizing the algorithm for the g
 
 ![Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
 
-![Localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz2.png)
+![Initial localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz2.png)
+
+![Go to target navigation shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz_animation.gif)localization_rviz_animation
 
 
 ### Directory Structure
