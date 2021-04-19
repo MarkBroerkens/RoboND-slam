@@ -1,8 +1,9 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics) 
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-slam/workflows/ROS%20CI/badge.svg)
 
-# Robot Localization
+# Robot Simulatnous Localization and Mapping (SLAM)
 Simulation of 2-wheeled robot with *differential drive** that localizes itself using Adaptive Montecarlo Localization (AMCL).
+
 
 You have two options to control the robot:
 * If the focus is on the terminal window you can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-localization/blob/main/teleop_twist_keyboard/README.md)
@@ -15,6 +16,25 @@ AMCL provides many parameters which allow for optimizing the algorithm for the g
 ![Initial localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz2.png)
 
 ![Go to target navigation shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz_animation.gif)
+
+
+### SLAM - How it works?
+#### Terminology
+* **Robot localization** determine where a mobile robot is located within its environment. (known map, unknown position)
+* **Mapping** modelling the environment. (known position, unknown map)
+* **SLAM** Simultanous Localization And Mapping (SLAM). Constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. 
+
+SLAM allows a robot to navigate in an enviroment that it has never seen before
+
+
+
+#### SLAM Algorithms
+* Extended Kalman Filter SLAM (EKF)
+* Sparse Extended Information Filter (SEIF)
+* Extended Information Form (EIF)
+* FastSLAM - e.g. real time appearance based mapping (RTABmap)
+* GraphSLAM - e.g. gmapping
+
 
 
 ### Directory Structure
@@ -117,6 +137,8 @@ $ source $HOME/catkin_ws/devel/setup.bash
 $ roslaunch my_robot maping.launch
 ```
 This will run the RTAB mapping.
+
+
 
 
 # License
