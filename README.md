@@ -10,7 +10,7 @@ You can use the keyboard to control the robot. See [Readme of the Teleoperation 
 
 ![Robot](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/mybot.png)
 
-![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/aws-robomaker-small-house-world/docs/images/gazebo_01.png)
+![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/aws-robomaker-small-house-world/docs/images/gazebo_01.png)
 
 ### SLAM - How it works?
 #### Terminology
