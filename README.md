@@ -10,7 +10,7 @@ You can use the keyboard to control the robot. See [Readme of the Teleoperation 
 
 ![Robot](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/mybot.png)
 
-![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/aws-robomaker-small-house-world/docs/images)
+![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/aws-robomaker-small-house-world/docs/images/gazebo_01.png)
 
 ### SLAM - How it works?
 #### Terminology
@@ -151,4 +151,3 @@ MIT license
 # Thanks to
 * The teleop_twist_keyboard code is copied from [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
 * Amazon AWS for its [Gazebo - Robomaker Small House World](https://github.com/aws-robotics/aws-robomaker-small-house-world)
-* Amazon AWS for its [Gazebo - Robomaker Hospital World](https://github.com/aws-robotics/aws-robomaker-hospital-world)
