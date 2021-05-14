@@ -14,7 +14,10 @@
   <include file="$(find my_robot)/launch/robot_description.launch"/>
 
   <!-- Launch Gazebo World -->
-  <include file="$(find aws_robomaker_small_house_world)/launch/small_house.launch"/>
+  <arg name="gazebo_gui" default="false"/>
+  <include file="$(find aws_robomaker_small_house_world)/launch/small_house.launch">
+     <arg name="gui" value="$(arg gazebo_gui)" />
+  </include>
 
   <!-- Spawn My Robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 

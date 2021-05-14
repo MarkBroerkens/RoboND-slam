@@ -77,8 +77,8 @@ SLAM allows a robot to navigate in an enviroment that it has never seen before.
 │   ├── README.md
 │   └── teleop_twist_keyboard.py
 └── aws-robomaker-small-house-world    # small house world
-    ├── CHANGELOG.rst
-    └── teleop_twist_keyboard.py
+    ├── README.md
+    └── ...
 
                                                                   
 
@@ -121,10 +121,10 @@ $ source devel/setup.bash
 ##### in Terminal 1
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch my_robot world.launch
+$ roslaunch my_robot world.launch gazebo_gui:=true
 
 ```
-This will open Rviz and Gazebo. 
+This will open Rviz and Gazebo. Omit the "gazebo_gui:=true" if you do not need the gazebo gui.
 
 ##### in Terminal 2
 ```sh
@@ -151,3 +151,7 @@ MIT license
 # Thanks to
 * The teleop_twist_keyboard code is copied from [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
 * Amazon AWS for its [Gazebo - Robomaker Small House World](https://github.com/aws-robotics/aws-robomaker-small-house-world)
+
+# Further Reading
+* [RTAB-Map Parameter Tutorial](http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning)
+* [List of RTAB-Map Parameters](https://github.com/introlab/rtabmap/blob/master/corelib/include/rtabmap/core/Parameters.h)

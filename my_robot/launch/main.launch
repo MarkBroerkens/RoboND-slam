@@ -1,6 +1,0 @@
-<launch>
-  <!-- Launch other relevant files-->
-  <include file="$(find my_robot)/launch/world.launch"/>
-  <include file="$(find my_robot)/launch/amcl.launch"/>
-  <node name="teleop_twist_keyboard.py" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
-</launch>
