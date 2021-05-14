@@ -2,37 +2,43 @@
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-slam/workflows/ROS%20CI/badge.svg)
 
 # Robot Simulatnous Localization and Mapping (SLAM)
-Simulation of 2-wheeled robot with *differential drive** that localizes itself using Adaptive Montecarlo Localization (AMCL).
+Simulation of 2-wheeled robot with *differential drive** that applies the FastSLAM algorithm RTABMAP for simultanous localization and mapping (SLAM).
 
 
-You have two options to control the robot:
-* If the focus is on the terminal window you can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-localization/blob/main/teleop_twist_keyboard/README.md)
-* Alternatively you can set a 2D navigation target in Rviz and robot calculates the path to the target autonomously.
+You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-slam/blob/main/teleop_twist_keyboard/README.md)
 
-AMCL provides many parameters which allow for optimizing the algorithm for the given scenario. Please see [amcl.launch](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/launch/amcl.launch) for details.
 
-![Robot](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/mybot.png)
+![Robot](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/mybot.png)
 
-![Initial localization shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz2.png)
-
-![Go to target navigation shown in Rviz](https://github.com/MarkBroerkens/RoboND-localization/blob/main/my_robot/images/localization_rviz_animation.gif)
-
+![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/aws-robomaker-small-house-world/docs/images)
 
 ### SLAM - How it works?
 #### Terminology
-* **Robot localization** determine where a mobile robot is located within its environment. (known map, unknown position)
-* **Mapping** modelling the environment. (known position, unknown map)
-* **SLAM** Simultanous Localization And Mapping (SLAM). Constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. 
+* **Robot localization** determine where a mobile robot is located within its environment. (known map, unknown pose)
+* **Mapping** modelling the environment. (known poses, unknown map)
+* **SLAM** Simultanous Localization And Mapping (SLAM). Constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. Inputs: Measurements, Controls, Outputs: Map, Trajestory.
 
-SLAM allows a robot to navigate in an enviroment that it has never seen before
+SLAM allows a robot to navigate in an enviroment that it has never seen before.
 
 
 
 #### SLAM Algorithms
+1. **Forms**
+ * **Online SLAM**: Robot estimates its current pose and the map using current measurements and controls.
+    p(xt , m, ct | z1:t, u1:t) => estimate **current pose** and map (x: pose, m: map, z: measurement, u: control, c: correspondance)
+ * **Full SLAM**: Robot estimates its entire trajectory and the map using all the measurements and controls.
+    p(x1:t , m, c1:t | z1:t u1:t) => estimate **trajestory** and map 
+
+2. **Nature**
+ * **Continuous**: Robot continuously senses its pose and the location of the objects.
+ * **Discrete**: Robot has to identify if a relation exists between any newly detected and previously detected objects.
+
+
+##### Implementations
 * Extended Kalman Filter SLAM (EKF)
 * Sparse Extended Information Filter (SEIF)
 * Extended Information Form (EIF)
-* FastSLAM - e.g. real time appearance based mapping (RTABmap)
+* FastSLAM - e.g. real time appearance based mapping (RTABmap) -> used in this project
 * GraphSLAM - e.g. gmapping
 
 
@@ -51,29 +57,27 @@ SLAM allows a robot to navigate in an enviroment that it has never seen before
 │   ├── images                         # images for documentation
 │   │   └── mybot.png
 │   ├── launch                         # launch files
-│   │   ├── maping.launch    
-│   │   ├── teleop.launch     
-│   │   ├── robot_description.launch
-│   │   └── world.launch
-│   ├── maps                           # map, generated from myworld.world
-│   │   ├── myworld.pgm                
-│   │   └── myworld.yaml
+│   │   ├── maping.launch              # launch mapping
+│   │   ├── teleop.launch              # launch teleop
+│   │   ├── robot_description.launch   # launch robot
+│   │   └── world.launch               # launch world
 │   ├── meshes                         
 │   │   └── hokuyo.dae                 # mesh of lidar sensor
 │   ├── package.xml                    # package info
 │   ├── rviz                           # rviz configuration
-│   │   └── amcl.rviz
+│   │   └── default.rviz
 │   ├── urdf                           # robot description files
 │   │   ├── my_robot.gazebo
 │   │   └── my_robot.xacro
-│   └── world                          # world folder for world files
-│       └── myworld.world
-└── README.md                          # this README.md file
-└── teleop_twist_keyboard              # teleoperation with keyboard
+├── README.md                          # this README.md file
+├── teleop_twist_keyboard              # teleoperation with keyboard
+│   ├── CHANGELOG.rst
+│   ├── CMakeLists.txt
+│   ├── package.xml
+│   ├── README.md
+│   └── teleop_twist_keyboard.py
+└── aws-robomaker-small-house-world    # small house world
     ├── CHANGELOG.rst
-    ├── CMakeLists.txt
-    ├── package.xml
-    ├── README.md
     └── teleop_twist_keyboard.py
 
                                                                   
@@ -146,3 +150,5 @@ MIT license
 
 # Thanks to
 * The teleop_twist_keyboard code is copied from [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
+* Amazon AWS for its [Gazebo - Robomaker Small House World](https://github.com/aws-robotics/aws-robomaker-small-house-world)
+* Amazon AWS for its [Gazebo - Robomaker Hospital World](https://github.com/aws-robotics/aws-robomaker-hospital-world)

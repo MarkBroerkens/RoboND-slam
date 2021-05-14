@@ -29,7 +29,7 @@
       <remap from="grid_map" to="/map"/>
 
       <!-- Rate (Hz) at which new nodes are added to map -->
-      <param name="Rtabmap/DetectionRate" type="string" value="1"/>
+      <param name="Rtabmap/DetectionRate" type="string" value="2"/>
 
       <!-- 2D SLAM -->
       <param name="Reg/Force3DoF" type="string" value="true"/>
@@ -46,13 +46,26 @@
 
       <!-- Loop Closure Constraint -->
       <!-- 0=Visual, 1=ICP (1 requires scan)-->
-      <param name="Reg/Strategy" type="string" value="0"/>
+      <param name="Reg/Strategy" type="string" value="1"/> <!-- 0 --> 
 
       <!-- Minimum visual inliers to accept loop closure -->
-      <param name="Vis/MinInliers" type="string" value="15"/>
+      <param name="Vis/MinInliers" type="string" value="10"/> <!-- 15 -->
 
       <!-- Set to false to avoid saving data when robot is not moving -->
       <param name="Mem/NotLinkedNodesKept" type="string" value="false"/>
+
+      <!-- Extra -->
+      <param name="queue_size" type="int" value="20"/>
+      <param name="wait_for_transform_duration" type="string" value="0.2"/> <!-- 0.1 --> 
+      <param name="RGBD/NeighborLinkRefining" type="string" value="true"/> <!-- Correct odometry using the input laser topic using ICP -->
+      <param name="RGBD/ProximityBySpace" type="string" value="true"/>
+      <param name="RGBD/AngularUpdate" type="string" value="0.05"/>
+      <param name="RGBD/LinearUpdate" type="string" value="0.05"/>
+      <param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
+      <param name="Grid/3D" type="string" value="true"/>
+      <param name="Grid/CellSize" type="string" value="0.1"/>
+      <param name="Grid/FromDepth" type="string" value="true"/>
+      <param name="Odom/Strategy" type="string" value="0"/> <!-- 0-->
     </node>
 
     <!-- visualization with rtabmapviz -->
