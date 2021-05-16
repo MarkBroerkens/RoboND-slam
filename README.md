@@ -2,7 +2,7 @@
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-slam/workflows/ROS%20CI/badge.svg)
 
 # Robot Simulatnous Localization and Mapping (SLAM)
-Simulation of 2-wheeled robot with *differential drive** that applies the FastSLAM algorithm RTABMAP for simultanous localization and mapping (SLAM). 
+Simulation of 2-wheeled robot with *differential drive** that applies the GraphSLAM algorithm RTABMAP for simultanous localization and mapping (SLAM). 
 SLAM enables constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. Inputs: Measurements, Controls, Outputs: Map, Trajestory.
 
 You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-slam/blob/main/teleop_twist_keyboard/README.md).
