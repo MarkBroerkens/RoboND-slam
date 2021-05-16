@@ -5,7 +5,7 @@
 Simulation of 2-wheeled robot with *differential drive** that applies the GraphSLAM algorithm RTABMAP for simultanous localization and mapping (SLAM). 
 SLAM enables constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. Inputs: Measurements, Controls, Outputs: Map, Trajestory.
 
-You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-slam/blob/main/teleop_twist_keyboard/README.md).
+You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/ros-teleop/teleop_twist_keyboard/blob/master/README.md).
 
 While navigating through the example house, the rtabmap algorithm feeds data into a database.
 Please find an [example database in google drive](https://drive.google.com/file/d/13yFbeKmmZcJY8Eg5G_mXbVAK3gq-PYAX/view?usp=sharing)
