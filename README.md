@@ -2,45 +2,27 @@
 ![ROS CI](https://github.com/MarkBroerkens/RoboND-slam/workflows/ROS%20CI/badge.svg)
 
 # Robot Simulatnous Localization and Mapping (SLAM)
-Simulation of 2-wheeled robot with *differential drive** that applies the FastSLAM algorithm RTABMAP for simultanous localization and mapping (SLAM).
+Simulation of 2-wheeled robot with *differential drive** that applies the FastSLAM algorithm RTABMAP for simultanous localization and mapping (SLAM). 
+SLAM enables constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. Inputs: Measurements, Controls, Outputs: Map, Trajestory.
+
+You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-slam/blob/main/teleop_twist_keyboard/README.md).
+
+While navigating through the example house, the rtabmap algorithm feeds data into a database.
+Please find an [example database in google drive](https://drive.google.com/file/d/13yFbeKmmZcJY8Eg5G_mXbVAK3gq-PYAX/view?usp=sharing)
 
 
-You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/MarkBroerkens/RoboND-slam/blob/main/teleop_twist_keyboard/README.md)
-
-
+# Impressions
+## The robot
 ![Robot](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/mybot.png)
 
+## The environment
 ![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/aws-robomaker-small-house-world/docs/images/gazebo_01.png)
 
-### SLAM - How it works?
-#### Terminology
-* **Robot localization** determine where a mobile robot is located within its environment. (known map, unknown pose)
-* **Mapping** modelling the environment. (known poses, unknown map)
-* **SLAM** Simultanous Localization And Mapping (SLAM). Constructing or updating a map of an unknown environment while simultaneously keeping track of the robot's location within it. Inputs: Measurements, Controls, Outputs: Map, Trajestory.
+## 3D Occupancy Grid Map
+![3D Occupancy Grid](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/OccupancyGrid.png)
 
-SLAM allows a robot to navigate in an enviroment that it has never seen before.
-
-
-
-#### SLAM Algorithms
-1. **Forms**
- * **Online SLAM**: Robot estimates its current pose and the map using current measurements and controls.
-    p(xt , m, ct | z1:t, u1:t) => estimate **current pose** and map (x: pose, m: map, z: measurement, u: control, c: correspondance)
- * **Full SLAM**: Robot estimates its entire trajectory and the map using all the measurements and controls.
-    p(x1:t , m, c1:t | z1:t u1:t) => estimate **trajestory** and map 
-
-2. **Nature**
- * **Continuous**: Robot continuously senses its pose and the location of the objects.
- * **Discrete**: Robot has to identify if a relation exists between any newly detected and previously detected objects.
-
-
-##### Implementations
-* Extended Kalman Filter SLAM (EKF)
-* Sparse Extended Information Filter (SEIF)
-* Extended Information Form (EIF)
-* FastSLAM - e.g. real time appearance based mapping (RTABmap) -> used in this project
-* GraphSLAM - e.g. gmapping
-
+## RTABMap Database Viewer
+![RTABMap Database Viewer](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/rtabmap-databaseviewer.png)
 
 
 ### Directory Structure
@@ -49,15 +31,11 @@ SLAM allows a robot to navigate in an enviroment that it has never seen before.
 ├── LICENSE
 ├── my_robot
 │   ├── CMakeLists.txt
-│   ├── config                         # config files for navigation
-│   │   ├── base_local_planner_params.yaml
-│   │   ├── costmap_common_params.yaml
-│   │   ├── global_costmap_params.yaml
-│   │   └── local_costmap_params.yaml
 │   ├── images                         # images for documentation
 │   │   └── mybot.png
 │   ├── launch                         # launch files
 │   │   ├── maping.launch              # launch mapping
+│   │   ├── localization.launch        # launch localization
 │   │   ├── teleop.launch              # launch teleop
 │   │   ├── robot_description.launch   # launch robot
 │   │   └── world.launch               # launch world
