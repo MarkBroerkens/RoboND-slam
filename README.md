@@ -47,18 +47,7 @@ Please find an [example database in google drive](https://drive.google.com/file/
 │   ├── urdf                           # robot description files
 │   │   ├── my_robot.gazebo
 │   │   └── my_robot.xacro
-├── README.md                          # this README.md file
-├── teleop_twist_keyboard              # teleoperation with keyboard
-│   ├── CHANGELOG.rst
-│   ├── CMakeLists.txt
-│   ├── package.xml
-│   ├── README.md
-│   └── teleop_twist_keyboard.py
-└── aws-robomaker-small-house-world    # small house world
-    ├── README.md
-    └── ...
-
-                                                                  
+└── README.md                          # this README.md file
 
 ```
 
@@ -128,7 +117,7 @@ This will run the RTAB mapping.
 MIT license
 
 # Thanks to
-* The teleop_twist_keyboard code is copied from [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
+* ros teleop for [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
 * Amazon AWS for its [Gazebo - Robomaker Small House World](https://github.com/aws-robotics/aws-robomaker-small-house-world)
 
 # Further Reading
