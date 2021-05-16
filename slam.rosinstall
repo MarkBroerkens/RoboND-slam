@@ -1,3 +1,8 @@
 - git: {local-name: src/RoboND-slam, uri: 'https://github.com/markbroerkens/RoboND-slam.git', version: main}
 - git: {local-name: src/aws-robomaker-small-house-world, uri: 'https://github.com/aws-robotics/aws-robomaker-small-house-world.git', version: ros1}
 - git: {local-name: src/teleop_twist_keyboard, uri: 'https://github.com/ros-teleop/teleop_twist_keyboard.git', version: master}
+- setup-file:
+    local-name: /opt/ros/kinetic/setup.sh
+- other:
+    local-name: /opt/ros/kinetic/share/ros
+    
