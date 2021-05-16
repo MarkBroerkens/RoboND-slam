@@ -76,7 +76,9 @@ $ sudo apt-get upgrade -y
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
-$ git clone https://github.com/MarkBroerkens/RoboND-slam
+$ cd ..
+$ sudo apt-get install python-rosinstall
+$ rosinstall . https://raw.githubusercontent.com/MarkBroerkens/RoboND-slam/main/slam.rosinstall
 ```
 
 
