@@ -76,15 +76,14 @@ $ sudo apt-get upgrade -y
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
-$ cd ..
-$ sudo apt-get install python-rosinstall
-$ rosinstall . https://raw.githubusercontent.com/MarkBroerkens/RoboND-slam/main/slam.rosinstall
 ```
 
 
 #### step 3 Install dependencies of packages in workspace
 ```sh
 $ cd $HOME/catkin_ws
+$ sudo apt-get install python-rosinstall
+$ rosinstall . https://raw.githubusercontent.com/MarkBroerkens/RoboND-slam/main/slam.rosinstall
 $ rosdep install --from-paths src --ignore-src -r -y
 ```
 
