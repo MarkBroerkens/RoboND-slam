@@ -16,7 +16,7 @@ Please find an [example database in google drive](https://drive.google.com/file/
 ![Robot](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/mybot.png)
 
 ## The environment
-![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/aws-robomaker-small-house-world/docs/images/gazebo_01.png)
+![World](https://github.com/MarkBroerkens/RoboND-slam/RoboND-slam/blob/main/my_robot/images/gazebo_01.png)
 
 ## 3D Occupancy Grid Map
 ![3D Occupancy Grid](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/OccupancyGrid.png)
