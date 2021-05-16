@@ -106,7 +106,7 @@ This will run the teleoperation mode.
 
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch my_robot maping.launch
+$ roslaunch my_robot mapping.launch
 ```
 This will run the RTAB mapping.
 
