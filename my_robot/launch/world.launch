@@ -14,9 +14,11 @@
   <include file="$(find my_robot)/launch/robot_description.launch"/>
 
   <!-- Launch Gazebo World -->
-  <arg name="gazebo_gui" default="true"/>
-  <include file="$(find aws_robomaker_small_house_world)/launch/small_house.launch">
-     <arg name="gui" value="$(arg gazebo_gui)" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+     <arg name="use_sim_time" value="true"/>
+     <arg name="debug" value="false"/>
+     <arg name="gui" value="true"/>
+     <arg name="world_name" value="$(find my_robot)/world/myworld.world"/>
   </include>
 
   <!-- Spawn My Robot -->

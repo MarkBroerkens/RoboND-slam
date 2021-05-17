@@ -41,9 +41,6 @@
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <depend>teleop_twist_keyboard</depend>
-  <depend>map_server</depend>
-  <depend>amcl</depend>
-  <depend>move_base</depend>
   <depend>gazebo_ros</depend>
   <depend>rviz</depend>
   <depend>rtabmap</depend>
