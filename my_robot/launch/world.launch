@@ -13,11 +13,13 @@
   <!-- Launch other relevant files-->
   <include file="$(find my_robot)/launch/robot_description.launch"/>
 
+  
   <!-- Launch Gazebo World -->
+  <arg name="gui" default="true"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
      <arg name="use_sim_time" value="true"/>
      <arg name="debug" value="false"/>
-     <arg name="gui" value="true"/>
+     <arg name="gui" value="$(arg gui)"/>
      <arg name="world_name" value="$(find my_robot)/world/myworld.world"/>
   </include>
 
