@@ -8,7 +8,7 @@ SLAM enables constructing or updating a map of an unknown environment while simu
 You can use the keyboard to control the robot. See [Readme of the Teleoperation Package](https://github.com/ros-teleop/teleop_twist_keyboard/blob/master/README.md).
 
 While navigating through the example house, the rtabmap algorithm feeds data into a database.
-Please find an [example database in google drive](https://drive.google.com/file/d/13yFbeKmmZcJY8Eg5G_mXbVAK3gq-PYAX/view?usp=sharing)
+Please find an example rtabmap.db [google drive](https://drive.google.com/file/d/1wC75SiQJfYWx492gvRxLaDUZ7mNRxkrQ/view?usp=sharing) (250 MB)
 
 
 # Impressions
@@ -16,13 +16,13 @@ Please find an [example database in google drive](https://drive.google.com/file/
 ![Robot](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/mybot.png)
 
 ## The environment
-![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/gazebo_01.png)
+![World](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/CustomWorld.png)
 
 ## 3D Occupancy Grid Map
 ![3D Occupancy Grid](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/OccupancyGrid.png)
 
-## RTABMap Database Viewer
-![RTABMap Database Viewer](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/rtabmap-databaseviewer.png)
+## Graph
+![RTABMap Database Viewer](https://github.com/MarkBroerkens/RoboND-slam/blob/main/my_robot/images/GraphView.png)
 
 
 ### Directory Structure
@@ -32,6 +32,9 @@ Please find an [example database in google drive](https://drive.google.com/file/
 ├── my_robot
 │   ├── CMakeLists.txt
 │   ├── images                         # images for documentation
+│   │   ├── CustomWorld.png
+│   │   ├── OccupancyGrid.png
+│   │   ├── GraphView.png
 │   │   └── mybot.png
 │   ├── launch                         # launch files
 │   │   ├── maping.launch              # launch mapping
@@ -47,6 +50,9 @@ Please find an [example database in google drive](https://drive.google.com/file/
 │   ├── urdf                           # robot description files
 │   │   ├── my_robot.gazebo
 │   │   └── my_robot.xacro
+│   └── world                          # the gazebo world definition
+│       └── myworld.world
+├── slam.rosinstall                    # install configuration for setting up the worlspace
 └── README.md                          # this README.md file
 
 ```
@@ -60,13 +66,20 @@ $ sudo apt-get update
 $ sudo apt-get upgrade -y
 ```
 
+#### Step 1a fix graphics driver
+If you are using the Udacity RoboND Virtual Machine, you might need to update the mesa graphics driver in order to avoid rviz crashes
+```sh
+$ sudo add-apt-repository ppa:ubuntu-x-swat/updates
+$ sudo apt-get update
+$ sudo apt-get dist-upgrade
+```
+
 #### Step 2 Create the catkin workspace
 ```sh
 $ mkdir -p $HOME/catkin_ws/src
 $ cd $HOME/catkin_ws/src
 $ catkin_init_workspace
 ```
-
 
 #### step 3 Install dependencies of packages in workspace
 ```sh
@@ -89,10 +102,10 @@ $ source devel/setup.bash
 ##### in Terminal 1
 ```sh
 $ source $HOME/catkin_ws/devel/setup.bash
-$ roslaunch my_robot world.launch gazebo_gui:=true
+$ roslaunch my_robot world.launch
 
 ```
-This will open Rviz and Gazebo. Omit the "gazebo_gui:=true" if you do not need the gazebo gui.
+This will open Rviz and Gazebo. Add "gui:=false" in order to switch off the gazebo gui. This is useful in order to save some CPU resources.
 
 ##### in Terminal 2
 ```sh
@@ -118,7 +131,6 @@ MIT license
 
 # Thanks to
 * ros teleop for [https://github.com/ros-teleop/teleop_twist_keyboard](https://github.com/ros-teleop/teleop_twist_keyboard)
-* Amazon AWS for its [Gazebo - Robomaker Small House World](https://github.com/aws-robotics/aws-robomaker-small-house-world)
 
 # Further Reading
 * [RTAB-Map Parameter Tutorial](http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning)
